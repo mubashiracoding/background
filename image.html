@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Background Image Generator</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: rosybrown; /* Fallback background color */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; /* Prevents image tiling */
+    }
+    .container {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    button {
+      font-size: 15px;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="container">
+      <img src="" id="random" alt="">
+    </div>
+  </div>
+  
+  <button onclick="imgr()">Generate Background</button>
+
+  <script>
+    const img = [
+      "https://images.pexels.com/photos/250591/pexels-photo-250591.jpeg?auto=compress&cs=tinysrgb&w=1600", // Higher resolution example
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/358457/pexels-photo-358457.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/2437291/pexels-photo-2437291.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/1374295/pexels-photo-1374295.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ];
+
+    function imgr() {
+      const index = Math.floor(Math.random() * img.length);
+      const randomImage = img[index];
+      document.body.style.backgroundImage = `url(${randomImage})`;
+    }
+  </script>
+</body>
+</html>
